@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <string-array name="channel">
+        <item>APP</item>
+        <item>门户</item>
+        <item>微信</item>
+    </string-array>
+
+    <string-array name="operation">
+        <item>123456</item>
+        <item>12345656</item>
+        <item>12345649</item>
+        <item>123456514</item>
+        <item>123456478</item>
+    </string-array>
+    <string-array name="behavior">
+        <item>CSND111111</item>
+        <item>CSND222222</item>
+    </string-array>
+
+    <string-array name="assets">
+        <item>10W+</item>
+        <item>100W+</item>
+        <item>1000W+</item>
+        <item>10000W+</item>
+        <item>100000W+</item>
+    </string-array>
+
+</resources>

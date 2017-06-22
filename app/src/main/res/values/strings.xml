@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">MarketingDemo</string>
+    <string name="title_home">运营位</string>
+    <string name="title_dashboard">业务</string>
+    <string name="title_notifications">活动</string>
+
+    <string name="hello_blank_fragment">Hello blank frameLayout</string>
+</resources>
