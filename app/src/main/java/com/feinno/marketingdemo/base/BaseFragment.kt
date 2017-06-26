@@ -5,7 +5,6 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.feinno.marketingdemo.api.INotify
 import com.feinno.marketingdemo.api.IViewSpecification
 
 
@@ -18,7 +17,7 @@ import com.feinno.marketingdemo.api.IViewSpecification
  * @update 2017/6/22 14:30
  * @version V1.0
  */
-abstract class BaseFragment<T : BasePresenter> : Fragment(), INotify, IViewSpecification {
+abstract class BaseFragment<T : BasePresenter> : Fragment(), IViewSpecification {
 
     var presenter: T? = null
 

@@ -20,6 +20,18 @@
         <item>CSND222222</item>
     </string-array>
 
+    <string-array name="bodies">
+        <item>一级机构AA</item>
+        <item>二级机构BB</item>
+    </string-array>
+
+    <string-array name="code">
+        <item>adfads</item>
+        <item>fasdfasd</item>
+        <item>werwef</item>
+    </string-array>
+
+
     <string-array name="assets">
         <item>10W+</item>
         <item>100W+</item>

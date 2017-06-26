@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v7.app.AppCompatActivity
-import com.feinno.marketingdemo.api.INotify
 import com.feinno.marketingdemo.api.IViewSpecification
 
 
@@ -19,7 +18,7 @@ import com.feinno.marketingdemo.api.IViewSpecification
  * @update 2017/6/21 12:04
  * @version V1.0
  */
-abstract class BaseActivity : AppCompatActivity(), INotify ,IViewSpecification{
+abstract class BaseActivity : AppCompatActivity() ,IViewSpecification{
 
     /**
      * 是否允许屏幕转动  默认不允许

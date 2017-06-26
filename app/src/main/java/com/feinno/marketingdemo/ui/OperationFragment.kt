@@ -8,6 +8,8 @@ import com.feinno.marketingdemo.R
 import com.feinno.marketingdemo.base.BaseFragment
 import com.feinno.marketingdemo.base.BasePresenter
 import com.feinno.marketingdemo.data.bean.BeanOperationQuery
+import com.feinno.marketingdemo.delegate.Preference
+import com.feinno.marketingdemo.extend.showToast
 
 
 /**
@@ -19,10 +21,12 @@ import com.feinno.marketingdemo.data.bean.BeanOperationQuery
  * @update 2017/6/21 12:04
  * @version V1.0
  */
-class OperationFragment : BaseFragment<OperationPresenter>(), OperationView {
+class OperationFragment private constructor(): BaseFragment<OperationPresenter>(), OperationView {
 
     private var mListener: OnFragmentInteractionListener? = null
     private var buttonSearch: Button? = null
+
+    private var userId by Preference("UserId", "csdn41526")
 
     override fun initParams(arguments: Bundle?) {
     }
@@ -81,7 +85,7 @@ class OperationFragment : BaseFragment<OperationPresenter>(), OperationView {
      * 通知
      */
     override fun toast(content: String) {
-        showToast(context, content)
+        showToast(content + userId)
         print(content)
     }
 

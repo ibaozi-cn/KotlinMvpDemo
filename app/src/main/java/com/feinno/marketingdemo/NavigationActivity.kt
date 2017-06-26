@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.view.View
 import com.feinno.marketingdemo.base.BaseBackExitActivity
+import com.feinno.marketingdemo.ui.BusinessFragment
+import com.feinno.marketingdemo.ui.MarketingListFragment
 import com.feinno.marketingdemo.ui.OperationFragment
 import com.feinno.marketingdemo.ui.OperationPresenterImpl
 
@@ -19,15 +21,16 @@ import com.feinno.marketingdemo.ui.OperationPresenterImpl
 class NavigationActivity : BaseBackExitActivity(), OperationFragment.OnFragmentInteractionListener {
 
     private var navigation: BottomNavigationView? = null
+    private val fragment = OperationFragment.newInstance()
 
-    override fun initParams(bundle: Bundle?) {
+    override fun initParams(arguments: Bundle?) {
     }
 
     override fun bindLayout(): Int {
         return R.layout.activity_main
     }
 
-    override fun initView(viewContent: View) {
+    override fun initView(rootView: View) {
         navigation = findViewById(R.id.navigation) as BottomNavigationView
     }
 
@@ -37,7 +40,6 @@ class NavigationActivity : BaseBackExitActivity(), OperationFragment.OnFragmentI
 
     override fun doBusiness() {
         //添加默认fragment
-        val fragment = OperationFragment.newInstance()
         val presenter = OperationPresenterImpl()
         presenter.view = fragment
         addFragmentToActivity(supportFragmentManager, fragment, R.id.frameLayout)
@@ -46,12 +48,15 @@ class NavigationActivity : BaseBackExitActivity(), OperationFragment.OnFragmentI
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
             R.id.navigation_home -> {
+                addFragmentToActivity(supportFragmentManager, fragment, R.id.frameLayout)
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_dashboard -> {
+                addFragmentToActivity(supportFragmentManager, BusinessFragment.newInstance(), R.id.frameLayout)
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_notifications -> {
+                addFragmentToActivity(supportFragmentManager, MarketingListFragment.newInstance(), R.id.frameLayout)
                 return@OnNavigationItemSelectedListener true
             }
         }

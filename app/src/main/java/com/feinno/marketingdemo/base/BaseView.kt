@@ -9,6 +9,6 @@ package com.feinno.marketingdemo.base
  * @update 2017/6/22 16:43
  * @version V1.0
  */
-interface BaseView<in T : BasePresenter> {
+interface BaseView<T : BasePresenter> {
     fun setBasePresenter(presenter: BasePresenter)
 }
