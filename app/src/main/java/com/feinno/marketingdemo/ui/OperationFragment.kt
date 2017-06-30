@@ -7,9 +7,11 @@ import android.widget.Button
 import com.feinno.marketingdemo.R
 import com.feinno.marketingdemo.base.BaseFragment
 import com.feinno.marketingdemo.base.BasePresenter
-import com.feinno.marketingdemo.data.bean.BeanOperationQuery
+import com.feinno.marketingdemo.data.bean.Authinfo
+import com.feinno.marketingdemo.data.bean.ParamOperationQuery
 import com.feinno.marketingdemo.delegate.Preference
 import com.feinno.marketingdemo.extend.showToast
+import kotlinx.android.synthetic.main.fragment_operation_selection.*
 
 
 /**
@@ -24,7 +26,6 @@ import com.feinno.marketingdemo.extend.showToast
 class OperationFragment private constructor(): BaseFragment<OperationPresenter>(), OperationView {
 
     private var mListener: OnFragmentInteractionListener? = null
-    private var buttonSearch: Button? = null
 
     private var userId by Preference("UserId", "csdn41526")
 
@@ -36,12 +37,11 @@ class OperationFragment private constructor(): BaseFragment<OperationPresenter>(
     }
 
     override fun initView(rootView: View) {
-        buttonSearch = rootView.findViewById(R.id.buttonSearch) as Button
     }
 
     override fun setListener() {
         buttonSearch?.setOnClickListener {
-            presenter?.query(BeanOperationQuery())
+            presenter?.query(ParamOperationQuery(Authinfo()))
         }
     }
 

@@ -18,7 +18,7 @@ import com.feinno.marketingdemo.api.IViewSpecification
  * @update 2017/6/21 12:04
  * @version V1.0
  */
-abstract class BaseActivity : AppCompatActivity() ,IViewSpecification{
+abstract class BaseActivity : AppCompatActivity(), IViewSpecification {
 
     /**
      * 是否允许屏幕转动  默认不允许
@@ -71,7 +71,10 @@ abstract class BaseActivity : AppCompatActivity() ,IViewSpecification{
     fun addFragmentToActivity(fragmentManager: FragmentManager,
                               fragment: Fragment, frameId: Int) {
         val transaction = fragmentManager.beginTransaction()
-        transaction.replace(frameId, fragment)
+        if (!fragment.isAdded)
+            transaction.add(frameId, fragment)
+        fragmentManager.fragments.filter { it.id == fragment.id }.map { transaction.hide(it) }
+        transaction.show(fragment)
         transaction.commit()
     }
 }

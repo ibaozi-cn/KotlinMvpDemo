@@ -4,10 +4,12 @@
              android:layout_height="match_parent"
              tools:context="com.feinno.marketingdemo.ui.MarketingListFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <android.support.v7.widget.RecyclerView
+            android:id="@+id/activityListView"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/hello_blank_fragment"/>
+            />
 
 </FrameLayout>

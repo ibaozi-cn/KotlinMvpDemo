@@ -2,17 +2,20 @@ apply plugin: 'com.android.application'
 
 apply plugin: 'kotlin-android'
 
+apply plugin: 'kotlin-android-extensions'
+
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.2"
+    compileSdkVersion compile_version
+    buildToolsVersion build_version
     defaultConfig {
         applicationId "com.feinno.marketingdemo"
-        minSdkVersion 16
-        targetSdkVersion 25
+        minSdkVersion min_version
+        targetSdkVersion target_version
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -20,18 +23,32 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-}
 
-dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
-    implementation 'com.android.support:appcompat-v7:25.3.1'
-    testImplementation 'junit:junit:4.12'
-    implementation 'com.android.support:design:25.3.1'
-    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
-    implementation 'com.android.support:support-vector-drawable:25.3.1'
-    implementation 'com.android.support:support-v4:25.3.1'
+    dependencies {
+        implementation fileTree(include: ['*.jar'], dir: 'libs')
+        androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
+            exclude group: 'com.android.support', module: 'support-annotations'
+        })
+        testImplementation 'junit:junit:4.12'
+        //
+        implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+        implementation "com.android.support:design:$support_version"
+        implementation "com.android.support:support-v4:$support_version"
+        implementation "com.android.support:appcompat-v7:$support_version"
+        implementation "com.android.support:support-vector-drawable:$support_version"
+        implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+        //
+        implementation 'com.squareup.okhttp3:okhttp:3.8.1'
+        implementation 'com.squareup.okhttp3:logging-interceptor:3.8.1'
+        //
+        implementation 'com.squareup.retrofit2:retrofit:2.3.0'
+        implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+        //
+        implementation 'com.google.code.gson:gson:2.8.1'
+        //
+        implementation 'com.github.bumptech.glide:glide:3.7.0'
+        implementation 'com.github.bumptech.glide:okhttp3-integration:1.5.0@aar'
+        //
+        debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.5.1'
+    }
 }

@@ -26,9 +26,16 @@
     </string-array>
 
     <string-array name="code">
-        <item>adfads</item>
-        <item>fasdfasd</item>
-        <item>werwef</item>
+        <item>010001</item>
+        <item>010002</item>
+        <item>010003</item>
+        <item>010004</item>
+        <item>010005</item>
+        <item>010006</item>
+        <item>010007</item>
+        <item>020001</item>
+        <item>020002</item>
+        <item>030001</item>
     </string-array>
 
 

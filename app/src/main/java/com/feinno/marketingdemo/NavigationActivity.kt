@@ -8,6 +8,7 @@ import com.feinno.marketingdemo.ui.BusinessFragment
 import com.feinno.marketingdemo.ui.MarketingListFragment
 import com.feinno.marketingdemo.ui.OperationFragment
 import com.feinno.marketingdemo.ui.OperationPresenterImpl
+import kotlinx.android.synthetic.main.activity_main.*
 
 /**
  * @project: MarketingDemo
@@ -20,8 +21,9 @@ import com.feinno.marketingdemo.ui.OperationPresenterImpl
  */
 class NavigationActivity : BaseBackExitActivity(), OperationFragment.OnFragmentInteractionListener {
 
-    private var navigation: BottomNavigationView? = null
     private val fragment = OperationFragment.newInstance()
+    private val fragment2 = BusinessFragment.newInstance()
+    private val fragment3 = MarketingListFragment.newInstance()
 
     override fun initParams(arguments: Bundle?) {
     }
@@ -31,7 +33,6 @@ class NavigationActivity : BaseBackExitActivity(), OperationFragment.OnFragmentI
     }
 
     override fun initView(rootView: View) {
-        navigation = findViewById(R.id.navigation) as BottomNavigationView
     }
 
     override fun setListener() {
@@ -52,11 +53,11 @@ class NavigationActivity : BaseBackExitActivity(), OperationFragment.OnFragmentI
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_dashboard -> {
-                addFragmentToActivity(supportFragmentManager, BusinessFragment.newInstance(), R.id.frameLayout)
+                addFragmentToActivity(supportFragmentManager, fragment2, R.id.frameLayout)
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_notifications -> {
-                addFragmentToActivity(supportFragmentManager, MarketingListFragment.newInstance(), R.id.frameLayout)
+                addFragmentToActivity(supportFragmentManager, fragment3, R.id.frameLayout)
                 return@OnNavigationItemSelectedListener true
             }
         }

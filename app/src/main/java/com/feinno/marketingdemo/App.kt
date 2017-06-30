@@ -2,6 +2,7 @@ package com.feinno.marketingdemo
 
 import android.app.Application
 import com.feinno.marketingdemo.delegate.NotNullSingleValueVar
+import com.squareup.leakcanary.LeakCanary
 
 /**
  * @project: KotlinMvpDemo
@@ -21,6 +22,10 @@ class App : Application() {
     override fun onCreate() {
         super.onCreate()
         instance = this
+        if(LeakCanary.isInAnalyzerProcess(instance)){
+            return
+        }
+        LeakCanary.install(instance)
     }
 
 }

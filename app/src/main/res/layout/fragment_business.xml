@@ -8,6 +8,7 @@
 
 
     <LinearLayout
+            android:layout_marginTop="50dp"
             android:layout_width="match_parent"
             android:orientation="horizontal"
             android:layout_height="wrap_content">
@@ -64,6 +65,7 @@
                 android:layout_height="wrap_content"/>
 
         <Spinner
+                android:id="@+id/businessCodeSpinner"
                 android:layout_width="0dp"
                 android:entries="@array/code"
                 android:gravity="center"
@@ -109,10 +111,12 @@
                 android:layout_height="wrap_content"/>
 
         <EditText
+                android:id="@+id/businessValue"
                 android:layout_width="0dp"
                 android:entries="@array/behavior"
                 android:gravity="center"
                 android:layout_weight="1"
+                android:inputType="number"
                 android:layout_height="wrap_content"/>
 
     </LinearLayout>

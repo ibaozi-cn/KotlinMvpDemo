@@ -2,7 +2,7 @@ package com.feinno.marketingdemo.ui
 
 import com.feinno.marketingdemo.base.BasePresenter
 import com.feinno.marketingdemo.base.BaseView
-import com.feinno.marketingdemo.data.bean.BeanOperationQuery
+import com.feinno.marketingdemo.data.bean.ParamOperationQuery
 
 /**
  * @project: MarketingDemo
@@ -18,5 +18,5 @@ interface OperationView :BaseView<OperationPresenter> {
 }
 
 interface OperationPresenter : BasePresenter {
-    fun query(bean: BeanOperationQuery)
+    fun query(bean: ParamOperationQuery)
 }

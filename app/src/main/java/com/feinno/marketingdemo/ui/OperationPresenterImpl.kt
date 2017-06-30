@@ -1,6 +1,6 @@
 package com.feinno.marketingdemo.ui
 
-import com.feinno.marketingdemo.data.bean.BeanOperationQuery
+import com.feinno.marketingdemo.data.bean.ParamOperationQuery
 import com.feinno.marketingdemo.delegate.ViewSet
 
 /**
@@ -17,7 +17,7 @@ class OperationPresenterImpl : OperationPresenter {
     //将view的set方法委托给ViewSet 添加setPresenter函数调用
     var view: OperationView by ViewSet<OperationView>(this)
 
-    override fun query(bean: BeanOperationQuery) {
+    override fun query(bean: ParamOperationQuery) {
         view.toast("查询完毕")
     }
 
